@@ -1,0 +1,133 @@
+$toolbarWidth:52px;
+$toolbarHeight:52px;
+$bgImg: url("../img/toolbar.png");
+@mixin browserEasy($attribute,$value){
+  -webkit-#{$attribute}:$value;
+  -moz-#{$attribute}:$value;
+  -ms-#{$attribute}:$value;
+  -o-#{$attribute}:$value;
+  #{$attribute}:$value;
+}
+@mixin pAbs($direction1,$distance1,$direction2,$distance2){
+  position: absolute;
+  #{$direction1}:$distance1;
+  #{$direction2}:$distance2;
+}
+@mixin opacity($opacity){
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity * 100);
+}
+@mixin item-hoverChange($initPos){
+  background-position: 0 $initPos;
+    &:hover{
+      background-position: 0 $initPos - 62px;
+  }
+}
+%tiTrans{
+  @include browserEasy(transition,all 0.5s);
+}
+$toolbar-item:(0:weixin,1:top,2:app,3:feedback);
+@each $size,$item in $toolbar-item{
+  .toolbar-item-#{$item}{
+    @include item-hoverChange(-798px + $size*124);
+    @extend %tiTrans;
+  }
+}
+
+.toolbar{
+  position: fixed;
+  left: 50%;
+  bottom: 5px;
+  margin-left:-$toolbarWidth / 2;
+}
+.toolbar-item{
+  display: block;
+  width: $toolbarWidth;
+  height: $toolbarHeight;
+  background-image:$bgImg;
+  margin-top: 1px;
+  position: relative;
+}
+.toolbar-item-weixin{
+  .toolbar-layer{
+    background-position: 0 0 ;
+    height: 214px;
+    @include pAbs(left,-166px,bottom,-12px);
+  }
+  &:hover{
+    .toolbar-layer{
+      @include browserEasy(transform,scale(1));
+      @include opacity(1);
+    }
+  }
+}
+.toolbar-item-app{
+  .toolbar-layer{
+    height: 202px;
+    @include pAbs(left,-166px,bottom,-12px);
+    background-position: 0 -214px ;
+  }
+  &:hover{
+    .toolbar-layer{
+      @include opacity(1);
+      @include browserEasy(transform,scale(1));
+    }
+  }
+}
+.toolbar-layer{
+  @include opacity(0);
+  background-image: $bgImg;
+  width: 172px;
+  @include browserEasy(transition,all 0.5s);
+  @include browserEasy(transform,scale(0.01));
+  transform-origin: 95% 95%;
+}
+
+
+
+
+
+
+
+
+//
+//#a{
+//  margin: 50px;
+//  border: 50px #1abc9c solid;
+//  padding: 50px;
+//  width: 100px;
+//  height: 100px;
+//  position: relative;
+//  div{
+//    margin: 5px;
+//    border: 5px #95a5a6 solid;
+//    padding: 5px;
+//    width: 10px;
+//    height: 10px;
+//    background-color: #5cb85c;
+//
+//    @include pAbs(right,20px,bottom,0px)
+//  }
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
