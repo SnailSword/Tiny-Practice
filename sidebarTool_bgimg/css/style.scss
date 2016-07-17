@@ -1,22 +1,7 @@
 $toolbarWidth:52px;
 $toolbarHeight:52px;
 $bgImg: url("../img/toolbar.png");
-@mixin browserEasy($attribute,$value){
-  -webkit-#{$attribute}:$value;
-  -moz-#{$attribute}:$value;
-  -ms-#{$attribute}:$value;
-  -o-#{$attribute}:$value;
-  #{$attribute}:$value;
-}
-@mixin pAbs($direction1,$distance1,$direction2,$distance2){
-  position: absolute;
-  #{$direction1}:$distance1;
-  #{$direction2}:$distance2;
-}
-@mixin opacity($opacity){
-  opacity: $opacity;
-  filter: alpha(opacity=$opacity * 100);
-}
+@import "common";
 @mixin item-hoverChange($initPos){
   background-position: 0 $initPos;
     &:hover{
