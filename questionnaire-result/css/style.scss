@@ -1,0 +1,23 @@
+@import "common";
+$barColor:#0066ff;
+.zf-quest-list{
+    .question{
+      margin:0 15%;
+    }
+    .zf-bar-cell{
+      position: relative;
+      width: 70%;
+      margin:3px 15%;
+    .ql-bar{
+      background-color: $barColor;
+      height: 10px;
+    }
+    .ql-points{
+      @include pAbs(right,30px,top,0px);
+      a{
+        color: #333;
+        display: inline;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.zf-quest-list .question {
+  margin: 0 15%; }
+.zf-quest-list .zf-bar-cell {
+  position: relative;
+  width: 70%;
+  margin: 3px 15%; }
+  .zf-quest-list .zf-bar-cell .ql-bar {
+    background-color: #0066ff;
+    height: 10px; }
+  .zf-quest-list .zf-bar-cell .ql-points {
+    position: absolute;
+    right: 30px;
+    top: 0px; }
+    .zf-quest-list .zf-bar-cell .ql-points a {
+      color: #333;
+      display: inline; }
+
+/*# sourceMappingURL=style.css.map */
