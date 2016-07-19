@@ -1,0 +1,20 @@
+.content {
+  width: 700px;
+  height: 50px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 25px;
+  line-height: 50px;
+  text-align: center; }
+  .content input {
+    border: #2c3e50 1px solid;
+    margin-right: 10px; }
+  .content button {
+    width: 60px;
+    height: 20px; }
+    .content button:hover {
+      background-color: #7f8c8d;
+      color: #fff; }
+
+/*# sourceMappingURL=style.css.map */

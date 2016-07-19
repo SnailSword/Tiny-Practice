@@ -20,10 +20,10 @@ img { border:none; display:block}
 .zf-quest-container{
     width: 94%;
     padding: 3%;
-    background: #fff;
+    /*background: #fff;*/
     overflow: hidden;
     /*max-width: 1200px;*/
-    min-width: 400px;
+    min-width: 500px;
     font-family: "Microsoft YaHei", SimSun, sans-serif;
 }
 .zf-quest-topcon{
@@ -37,7 +37,7 @@ img { border:none; display:block}
     line-height: 42px;
 }
 .zf-quest-topcon{
-    text-align: center;
+    text-align: left;
     font-size: 14px;
     color: #4c4c4c;
 }
@@ -90,7 +90,7 @@ img { border:none; display:block}
 .zf-quest-list h5.question{
     line-height: 28px;
     color: #4c4c4c;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
 }
 .zf-quest-list > p{
@@ -115,5 +115,8 @@ img { border:none; display:block}
     margin-top: 50px;
     border: none;
     border-radius: 5px;
+}
+.zf-date{
+    text-align: center;
 }
 

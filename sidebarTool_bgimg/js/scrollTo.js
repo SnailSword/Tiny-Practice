@@ -7,10 +7,11 @@ define(['jquery'],function ($) {
         this.$el = $('html,body');
     }
     ScrollTo.prototype.move = function () {
-        console.log(this);
+        if(!this.$el.is(':animated')){
         this.$el.animate({
             scrollTop:this.opt.speed
         },this.opt.speed);
+        }
     }
     ScrollTo.prototype.go = function () {
         this.$el.scrollTop(this.opt.speed);

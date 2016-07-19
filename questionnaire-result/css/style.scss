@@ -1,23 +1,71 @@
 @import "common";
-$barColor:#0066ff;
+//$barColor:#0066ff;
 .zf-quest-list{
-    .question{
-      margin:0 15%;
+  border-bottom: #999 2px dashed;
+  .question{
+      margin:0 0;
     }
+  .bar-cell-container{
+    margin-top: 5px;
+  }
     .zf-bar-cell{
       position: relative;
-      width: 70%;
-      margin:3px 15%;
+      width: 100%;
+      margin:18px 0;
     .ql-bar{
-      background-color: $barColor;
-      height: 10px;
+      //background-color: $barColor;
+      height: 15px;
+      text-align: right;
+      @include browserEasy(border-radius,3px);
+      a{
+        //color: #333;
+        font-size: 12px;
+        padding-right: 2px;
+      }
+      :after{
+        content: '';
+        width: 85%;
+        height: 15px;
+        background-color: #ecf0f1;
+        @include pAbs(left,0,bottom,0);
+        @include browserEasy(border-radius,3px);
+        z-index: -10;
+      }
     }
+      .ql-option{
+        font-size:14px;
+        color: #333;
+      }
     .ql-points{
       @include pAbs(right,30px,top,0px);
       a{
         color: #333;
         display: inline;
       }
+    }
+  }
+}
+.zf-quest-userOption{
+  position: relative;
+  margin: 10px 0;
+  width: 100%;
+  height: 1px;
+  .zf-select{
+    @include pAbs(right,0px,top,10px);
+    a{
+      color: #333;
+      font-size: 12px;
+    }
+    *{
+      display: inline;
+    }
+  }
+}
+.zf-footer{
+  a{
+    color: #555;
+    &:hover{
+      color: #000;
     }
   }
 }

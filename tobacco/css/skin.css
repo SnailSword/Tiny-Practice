@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*skin-red*/
+.skin1 .topforbid{
+	background-color: #ea3a3a;
+}
+.skin1 .topsearch .serbox .btn{
+	background-color: #e95a5a;
+}
+/* .skin1 .fix-left ul li:hover, */.skin1 .fix-left ul li.leftact{
+    background: url(../images/fixleft-bgact.png) no-repeat;
+}
+.skin1 .fix-right ul li{
+	background: #e25141;
+}
+/*skin red-end*/

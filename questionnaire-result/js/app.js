@@ -3,7 +3,7 @@
  */
 DATA = {
     1:{
-        '西班牙巴塞罗那':4,
+        '西班牙巴塞罗那':8,
         '美国纽约':2,
         '意大利米兰':5,
         '希腊雅典':2,
@@ -23,9 +23,14 @@ DATA = {
         '选项3':1,
         '选项4':2,
         '选项5':8
+    },
+    4:{
+        '<img src="img/option1.png">':5,
+        '<img src="img/option2.png">':6,
+        '<img src="img/option3.png">':3,
+        '<img src="img/option4.png">':7,
     }
 }
-
 $(document).ready(function () {
     // var bcc1 = new BarCellCom();
     // bcc1.addCell();
@@ -46,12 +51,44 @@ function BarCellCom(opts) {
     this.addCell = function (ele) {
         for(var i in opts){
             var cell = $('<div class="zf-bar-cell"></div>')
-            var cellP = $('<p class="ql-option"></p>').text(i);
-            // console.log((opts[i]/this.sum)*100+'%');
+            var cellP = $('<p class="ql-option"></p>').html(i);
+            if(i.substr(0,4)=='<img'){
+                cellP.css('margin-bottom','5px');
+            }
+            var cellPercent = $('<a></a>').text(((opts[i]/this.sum)*100).toFixed(1)+'%');
+            var CC = parseInt((opts[i]/this.sum)*100/10);
             // var length = $('body').width()*0.9;
             var cellB = $('<div class="ql-bar"></div>').css('width',(opts[i]/this.sum)*100+'%');
+            switch (CC){
+                case 0:
+                    if(opts[i]==0){
+                        cellPercent.css('color','#7f8c8d');
+                        cellPercent.css('margin-left','2px');
+                    }
+                    cellB.css('background-color','#c0392b');
+                    break;
+                case 1:
+                    cellB.css('background-color','#e67e22');
+                    break;
+                case 2:
+                    cellB.css('background-color','#f1c40f');
+                    break;
+                case 3:
+                    cellB.css('background-color','#27ae60');
+                    break;
+                case 4:
+                    cellB.css('background-color','#1abc9c');
+                    break;
+                case 5:
+                    cellB.css('background-color','#27ae60');
+                    break;
+                default:
+                    cellB.css('background-color','#27ae60');
+            }
+
+            cellB.append(cellPercent);
             var cellPo = '<div class="ql-points">'+ opts[i] +'票</div>';
-            cell.append(cellB,cellP,cellPo);
+            cell.append(cellP,cellB,cellPo);
             $(ele).append(cell);
         }
     }
