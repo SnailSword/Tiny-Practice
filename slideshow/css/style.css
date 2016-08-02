@@ -1,38 +1,45 @@
-/*
-Error: Invalid CSS after "BA": expected "{", was ""
-        on line 2 of style.scss
+.container {
+  margin: 50px auto;
+  width: 700px; }
 
-1: @import 'common';
-2: BA
+.longSlideShow {
+  width: 700px;
+  height: 100px;
+  overflow: hidden; }
+  .longSlideShow ul {
+    width: 1400px; }
+  .longSlideShow li {
+    width: 110.83333px;
+    height: 100px;
+    background-position: center center;
+    background-size: cover;
+    float: left;
+    margin-left: 5px; }
+    .longSlideShow li:first-child {
+      padding-left: 0; }
+    .longSlideShow li:nth-child(1) {
+      background-image: url(../images/a.png); }
+    .longSlideShow li:nth-child(7) {
+      background-image: url(../images/a.png); }
+    .longSlideShow li:nth-child(2) {
+      background-image: url(../images/b.jpg); }
+    .longSlideShow li:nth-child(8) {
+      background-image: url(../images/b.jpg); }
+    .longSlideShow li:nth-child(3) {
+      background-image: url(../images/c.jpg); }
+    .longSlideShow li:nth-child(9) {
+      background-image: url(../images/c.jpg); }
+    .longSlideShow li:nth-child(4) {
+      background-image: url(../images/d.jpg); }
+    .longSlideShow li:nth-child(10) {
+      background-image: url(../images/d.jpg); }
+    .longSlideShow li:nth-child(5) {
+      background-image: url(../images/e.jpg); }
+    .longSlideShow li:nth-child(11) {
+      background-image: url(../images/e.jpg); }
+    .longSlideShow li:nth-child(6) {
+      background-image: url(../images/f.jpg); }
+    .longSlideShow li:nth-child(12) {
+      background-image: url(../images/f.jpg); }
 
-Backtrace:
-style.scss:2
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1120:in `tok!'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:656:in `block'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:649:in `ruleset'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:675:in `block_child'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:668:in `block_contents'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:125:in `stylesheet'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:41:in `parse'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/engine.rb:406:in `_to_tree'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin.rb:82:in `update_stylesheets'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:51:in `process_result'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
-Z:/install here/Ruby22-x64/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/bin/scss:13:in `<top (required)>'
-Z:/install here/Ruby22-x64/Ruby22-x64/bin/scss:23:in `load'
-Z:/install here/Ruby22-x64/Ruby22-x64/bin/scss:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"BA\": expected \"{\", was \"\"\A         on line 2 of style.scss\A \A 1: @import 'common';\A 2: BA"; }
+/*# sourceMappingURL=style.css.map */

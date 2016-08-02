@@ -1,1 +1,45 @@
 @import 'common';
+$conWidth : 700px;
+$conHeight : 100px;
+$space : 5px;
+$num:6;
+$imgList:'../images/a.png',
+        '../images/b.jpg',
+        '../images/c.jpg',
+        '../images/d.jpg',
+        '../images/e.jpg',
+        '../images/f.jpg';
+
+.container{
+  margin: 50px auto;
+  width: $conWidth;
+}
+.longSlideShow{
+  @include setSize($conWidth,$conHeight);
+  overflow: hidden;
+  & ul{
+    width: $conWidth * 2;
+  }
+  & li{
+    @include setSize(($conWidth - ($num+1)*$space)/$num,$conHeight);
+    background-position : center center ;
+    background-size: cover;
+    float: left;
+    margin-left: $space;
+    &:first-child{
+      padding-left: 0;
+    }
+
+    @for $i from 1 through $num{
+      &:nth-child(#{$i}){
+        background-image: url( #{ nth($imgList,$i)} );
+      }
+      &:nth-child(#{$i+$num}){
+        background-image: url( #{ nth($imgList,$i)} );
+      }
+    }
+  }
+
+}
+
+
