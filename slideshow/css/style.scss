@@ -8,7 +8,19 @@ $imgList:'../images/a.png',
         '../images/c.jpg',
         '../images/d.jpg',
         '../images/e.jpg',
-        '../images/f.jpg';
+        '../images/f.jpg',
+        '../images/g.jpg',
+        '../images/h.jpg',
+        '../images/i.jpg',
+        '../images/j.jpg',
+        '../images/k.jpg',
+        '../images/l.jpg',
+;
+$imgNum : length($imgList);
+$totalWidth : $imgNum * (($conWidth - ($num+1)*$space)/$num + $space);
+$interval : 4s;
+$delay : 0.2s;
+$stopTo : $interval + $delay +0.7s;
 
 .container{
   margin: 50px auto;
@@ -17,10 +29,12 @@ $imgList:'../images/a.png',
 .longSlideShow{
   @include setSize($conWidth,$conHeight);
   overflow: hidden;
-  & ul{
-    width: $conWidth * 2;
+  margin: $space 0;
+  ul{
+    position: relative;
+    width: $totalWidth * 2;
   }
-  & li{
+  li{
     @include setSize(($conWidth - ($num+1)*$space)/$num,$conHeight);
     background-position : center center ;
     background-size: cover;
@@ -30,16 +44,47 @@ $imgList:'../images/a.png',
       padding-left: 0;
     }
 
-    @for $i from 1 through $num{
-      &:nth-child(#{$i}){
-        background-image: url( #{ nth($imgList,$i)} );
-      }
-      &:nth-child(#{$i+$num}){
-        background-image: url( #{ nth($imgList,$i)} );
-      }
-    }
+    //@for $i from 1 through $imgNum{
+    //  &:nth-child(#{$i}){
+    //    background-image: url( #{ nth($imgList,$i)} );
+    //  }
+    //  &:nth-child(#{$i+$imgNum}){
+    //    background-image: url( #{ nth($imgList,$i)} );
+    //  }
+    //}
   }
 
 }
 
+ul{
+  &.ret1{
+    animation: $interval $delay ret,$interval $stopTo ret infinite;
+  }
+  &.inf1{
+    animation: $interval inf,$interval $stopTo inf infinite;
+  }
+  &.ret2{
+    animation: $interval $delay * 3 ret,$interval $stopTo ret infinite;;
+  }
+  &.inf2{
+    animation: $interval $delay * 2 inf,$interval $stopTo inf infinite;
+  }
+}
+
+@keyframes ret{
+  0% {left:0}
+  10% {left:0}
+  40% {left: -$conWidth+$space}
+  60% {left: -$conWidth+$space}
+  90%{left:0}
+  100%{left:0}
+}
+@keyframes inf{
+  0% {left:0}
+  10% {left:0}
+  40% {left: -$conWidth+$space}
+  60% {left: -$conWidth+$space}
+  90%{left: -2*$conWidth+$space*2}
+  100%{left: -2*$conWidth+$space*2}
+}
 

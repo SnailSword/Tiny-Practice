@@ -5,9 +5,11 @@
 .longSlideShow {
   width: 700px;
   height: 100px;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 5px 0; }
   .longSlideShow ul {
-    width: 1400px; }
+    position: relative;
+    width: 2780px; }
   .longSlideShow li {
     width: 110.83333px;
     height: 100px;
@@ -17,29 +19,41 @@
     margin-left: 5px; }
     .longSlideShow li:first-child {
       padding-left: 0; }
-    .longSlideShow li:nth-child(1) {
-      background-image: url(../images/a.png); }
-    .longSlideShow li:nth-child(7) {
-      background-image: url(../images/a.png); }
-    .longSlideShow li:nth-child(2) {
-      background-image: url(../images/b.jpg); }
-    .longSlideShow li:nth-child(8) {
-      background-image: url(../images/b.jpg); }
-    .longSlideShow li:nth-child(3) {
-      background-image: url(../images/c.jpg); }
-    .longSlideShow li:nth-child(9) {
-      background-image: url(../images/c.jpg); }
-    .longSlideShow li:nth-child(4) {
-      background-image: url(../images/d.jpg); }
-    .longSlideShow li:nth-child(10) {
-      background-image: url(../images/d.jpg); }
-    .longSlideShow li:nth-child(5) {
-      background-image: url(../images/e.jpg); }
-    .longSlideShow li:nth-child(11) {
-      background-image: url(../images/e.jpg); }
-    .longSlideShow li:nth-child(6) {
-      background-image: url(../images/f.jpg); }
-    .longSlideShow li:nth-child(12) {
-      background-image: url(../images/f.jpg); }
+
+ul.ret1 {
+  animation: 4s 0.2s ret, 4s 4.9s ret infinite; }
+ul.inf1 {
+  animation: 4s inf, 4s 4.9s inf infinite; }
+ul.ret2 {
+  animation: 4s 0.6s ret, 4s 4.9s ret infinite; }
+ul.inf2 {
+  animation: 4s 0.4s inf, 4s 4.9s inf infinite; }
+
+@keyframes ret {
+  0% {
+    left: 0; }
+  10% {
+    left: 0; }
+  40% {
+    left: -695px; }
+  60% {
+    left: -695px; }
+  90% {
+    left: 0; }
+  100% {
+    left: 0; } }
+@keyframes inf {
+  0% {
+    left: 0; }
+  10% {
+    left: 0; }
+  40% {
+    left: -695px; }
+  60% {
+    left: -695px; }
+  90% {
+    left: -1390px; }
+  100% {
+    left: -1390px; } }
 
 /*# sourceMappingURL=style.css.map */
