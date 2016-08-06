@@ -58,16 +58,16 @@ $stopTo : $interval + $delay +0.7s;
 
 ul{
   &.ret1{
-    animation: $interval $delay ret,$interval $stopTo ret infinite;
+    animation: $interval $delay inf,$interval $stopTo ret;
   }
   &.inf1{
-    animation: $interval inf,$interval $stopTo inf infinite;
+    animation: $interval inf,$interval $stopTo inf;
   }
   &.ret2{
-    animation: $interval $delay * 3 ret,$interval $stopTo ret infinite;;
+    animation: $interval $delay * 3 inf,$interval $stopTo ret;
   }
   &.inf2{
-    animation: $interval $delay * 2 inf,$interval $stopTo inf infinite;
+    animation: $interval $delay * 2 inf,$interval $stopTo inf;
   }
 }
 
